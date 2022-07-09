@@ -1,0 +1,23 @@
+ROSTemplateFormatVersion: '2015-09-01'
+Transform: 'Aliyun::Serverless-2018-04-03'
+Resources:
+  s214069773:
+    Type: 'Aliyun::Serverless::Service'
+    Properties:
+      Description: This is s214069773 service
+    todolist:
+      Type: 'Aliyun::Serverless::Function'
+      Properties:
+        Handler: index.handler
+        Runtime: nodejs10
+        Timeout: 60
+        MemorySize: 512
+        CodeUri: s214069773\todolist
+      Events:
+        httpTrigger:
+          Type: HTTP
+          Properties:
+            AuthType: ANONYMOUS
+            Methods:
+              - GET
+              - POST
