@@ -21,3 +21,5 @@ Resources:
             Methods:
               - GET
               - POST
+              - PUT
+              - DELETE
